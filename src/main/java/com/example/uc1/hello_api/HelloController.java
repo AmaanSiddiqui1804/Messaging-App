@@ -24,10 +24,16 @@ public class HelloController {
         return "Hello " + name + " from BridgeLabz";
     }
 
-    // UC4 POST request that accepts user data
+    // UC4 POST request that accepts user data  //Postman API
     @PostMapping("/post")
-    public String sayHello(@RequestBody UserDTO user) {
+    public String sayHelloPostman(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+    }
+
+    //UC5 Path and Query Parameter
+    @PutMapping("put/{firstName}")
+    public String sayHelloPut(@PathVariable String firstName, @RequestParam String lastName){
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
     }
 
 }
